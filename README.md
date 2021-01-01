@@ -73,15 +73,18 @@ The values for the colors can be any valid color string in "HEX", "RGB" or by co
             
   ```
 
-This is with the default Lovelace frontend theme set:
+This is with the Slate Lovelace frontend theme set using the default colors:
+
+![Default](toggle_row_default.gif)
 
 
+This is with the Slate Lovelace frontend theme set using the default custom theme colors:
+
+![CustomDefault](toggle_row_custom_default.gif)
 
 
-This is with the "Slate" frontend theme set:
+This is with the Slate Lovelace frontend theme set using the custom theme colors (black & purple) with custom text:
 
-
-
-This is how this plugin looks with the Fan control & Light Brightness Rows:
+![CustomDefault](toggle_row_custom_text.gif)
 
 
