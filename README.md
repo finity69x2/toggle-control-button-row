@@ -36,6 +36,7 @@ Then to use this in a card place the following in your entity card:
 | isOnColor | String | No | '#43A047' | Sets the color of the 'Low' button if entity is on low |
 | customOffText | String | No | 'OFF' | Sets the text of the "off" button |
 | customOnText | String | No | 'ON' | Sets the text of the "on" button |
+| state_color | Boolean | No | false | Sets the icon color of the entity to reflect the current state |
 
 The values for the colors can be any valid color string in "HEX", "RGB" or by color name.
 
