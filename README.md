@@ -32,6 +32,8 @@ Then to use this in a card place the following in your entity card:
 | type | String | Yes | none | custom:binary-control-button-row |
 | name | String | No | none | A custom name for the entity in the row |
 | customTheme | Boolean | No | false | set to true to use a custom theme |
+| width | String | No | 30px | A custom width for the button |
+| height | String | No | 30px | A custom height for the button |
 | isOffColor | String | No | '#f44c09' | Sets the color of the 'Off' button if entity is off |
 | isOnColor | String | No | '#43A047' | Sets the color of the 'Low' button if entity is on low |
 | customOffText | String | No | 'OFF' | Sets the text of the "off" button |
@@ -71,6 +73,8 @@ The values for the colors can be any valid color string in "HEX", "RGB" or by co
             entity: light.sengled_e11g13_03070a4c_1
             customOnText: yay
             customOffText: nay
+            width: '15px'
+            height: '15px'
             
   ```
 
