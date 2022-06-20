@@ -19,7 +19,7 @@ class CustomToggleRow extends Polymer.Element {
 				margin-left: 2px;
 				margin-right: 2px;
 				background-color: #759aaa;
-				border: 1px solid lightgrey; 
+				border: 1px solid lightgrey;
 				border-radius: 4px;
 				font-size: 10px !important;
 				color: inherit;
@@ -69,8 +69,11 @@ class CustomToggleRow extends Polymer.Element {
 			height: '30px',
 			isOnColor: '#43A047',
 			isOffColor: '#f44c09',
+			isOnTextColor: '#FFFFFF',
+			isOffTextColor: '#FFFFFF',
 			customOffText: 'OFF',
 			customOnText: 'ON',
+
 			...config
 		};
 	}
@@ -84,23 +87,25 @@ class CustomToggleRow extends Polymer.Element {
 		const buttonHeight = config.height;
 		const custOnClr = config.isOnColor;
 		const custOffClr = config.isOffColor;
+		const custOnTxtClr = config.isOnTextColor;
+		const custOffTxtClr = config.isOffTextColor;
 		const custOffTxt = config.customOffText;
 		const custOnTxt = config.customOnText;
-	
-		
+
+
 		let state;
 			if (stateObj) {
 				state = stateObj.state;
 			}
-	
+
 		let color;
-			
+
 		if (state == 'on' || state == 'off') {
 			if (custTheme) {
 				if (state == 'on') {
-					color = 'background-color:' + custOnClr;
+					color = 'background-color:' + custOnClr + ';color:' + custOnTxtClr;
 				} else {
-					color = 'background-color:' + custOffClr;
+					color = 'background-color:' + custOffClr+ ';color:' + custOffTxtClr;
 				}
 			} else {
 				if (state == 'on') {
@@ -112,18 +117,18 @@ class CustomToggleRow extends Polymer.Element {
 		} else {
 			color = '#cfccc6';
 		}
-	
+
 		let offtext = custOffTxt;
 		let ontext = custOnTxt;
 		let unavailtext = 'N/A';
-		
+
 		let buttonwidth = buttonWidth;
 		let buttonheight = buttonHeight;
-	
+
 		let offname = 'off';
 		let onname = 'on';
 		let unavailname = 'unavailable';
-	
+
 		if (state == 'off') {
 			this.setProperties({
 			_stateObj: stateObj,
@@ -156,8 +161,8 @@ class CustomToggleRow extends Polymer.Element {
 			});
 		}
 	}
-	
-	
+
+
 	stopPropagation(e) {
 		e.stopPropagation();
 	}
@@ -171,5 +176,5 @@ class CustomToggleRow extends Polymer.Element {
 		}
 	}
 }
-	
+
 customElements.define('toggle-control-button-row', CustomToggleRow);
