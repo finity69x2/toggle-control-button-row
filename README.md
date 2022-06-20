@@ -36,6 +36,8 @@ Then to use this in a card place the following in your entity card:
 | height | String | No | 30px | A custom height for the button |
 | isOffColor | String | No | '#f44c09' | Sets the color of the 'Off' button if entity is off |
 | isOnColor | String | No | '#43A047' | Sets the color of the 'Low' button if entity is on low |
+| isOffTextColor | String | No | '#FFFFFF' | Sets the text color of the 'Off' button if entity is off |
+| isOnTextColor | String | No | '#FFFFFF' | Sets the text color of the 'Low' button if entity is on low |
 | customOffText | String | No | 'OFF' | Sets the text of the "off" button |
 | customOnText | String | No | 'ON' | Sets the text of the "on" button |
 | state_color | Boolean | No | false | Sets the icon color of the entity to reflect the current state |
@@ -67,6 +69,8 @@ The values for the colors can be any valid color string in "HEX", "RGB" or by co
             customTheme: true
             isOnColor: 'rgb(255, 0, 0)'
             isOffColor: 'purple'
+            isOnTextColor: 'white'
+            isOffTextColor: 'black'
         ## USE THIS CONFIG TO SET CUSTOM BUTTON TEXT (NOT REQUIRED TO SET "customTheme: true" TO USE THESE )
           - type: custom:toggle-control-button-row
             name: Basement Bath Customized Button Row
