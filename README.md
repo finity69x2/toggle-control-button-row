@@ -1,4 +1,4 @@
-# toggle-control-button-row
+# lovelace-toggle-control-button
 
 Provides a means to program a Lovelace button row to control any binary entity (lights, switches, input booleans, etc) that have the state as either on or off using a toggle style single button. 
 This will also work for fans and dimmable lights that you would only ever like to switch on & off with a single speed or brightness setting (set outside the configuration for this plugin)
@@ -12,12 +12,12 @@ Follow the instructions there for installation making sure you note the "url:" s
 
 Conversely, if you don't use HACS you can install it manually by performing the following:
 
-Copy the toggle-control-button-row.js file to the appropriate folder in your Home Assistant Configuration directory (/config/www/).
+Copy the toggle-control-button.js file to the appropriate folder in your Home Assistant Configuration directory (/config/www/).
 
 Place the following in your "resources" section in your lovelace configuration (updating the localation to where you placed the above file):
 
   ```
-    - url: /local/toggle-control-button-row.js
+    - url: /local/toggle-control-button.js
       type: module
   ```
     
@@ -53,17 +53,17 @@ The values for the colors can be any valid color string in "HEX", "RGB" or by co
         show_header_toggle: false
         entities:
         ## USE THIS CONFIG TO HAVE IT MATCH YOUR THEME ##
-          - type: custom:toggle-control-button-row
+          - type: custom:toggle-control-button
             name: Basement Bath Default Button Row
             entity: light.sengled_e11g13_03070a4c_1
             customTheme: false
         ## USE THIS CONFIG TO USE A DEFAULT CUSTOM THEME
-          - type: custom:toggle-control-button-row
+          - type: custom:toggle-control-button
             name: Basement Bath Custom Button Row
             entity: light.basement_bath_light
             customTheme: true
         ## USE THIS CONFIG TO USE A 'CUSTOMZED' CUSTOM THEME
-          - type: custom:toggle-control-button-row
+          - type: custom: toggle-control-button
             name: Basement Bath Customized Button Row
             entity: light.sengled_e11g13_03070a4c_1
             customTheme: true
@@ -72,7 +72,7 @@ The values for the colors can be any valid color string in "HEX", "RGB" or by co
             isOnTextColor: 'white'
             isOffTextColor: 'black'
         ## USE THIS CONFIG TO SET CUSTOM BUTTON TEXT (NOT REQUIRED TO SET "customTheme: true" TO USE THESE )
-          - type: custom:toggle-control-button-row
+          - type: custom:toggle-control-button
             name: Basement Bath Customized Button Row
             entity: light.sengled_e11g13_03070a4c_1
             customOnText: yay
