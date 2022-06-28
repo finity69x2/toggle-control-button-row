@@ -74,6 +74,20 @@ class CustomToggleButton extends Polymer.Element {
 			customOffText: 'OFF',
 			customOnText: 'ON',
 
+			unlockedColor: '#43A047',
+			lockedColor: '#f44c09',
+			unlockedTextColor: '#FFFFFF',
+			lockedTextColor: '#FFFFFF',
+\
+            unlockingColor: '#f44c09'
+			lockingColor: '#f44c09'
+			unlockingTextColor: '#FFFFFF'
+			lockingTextColor: '#FFFFFF'
+
+            customUnlockedText: 'LOCK',
+			customLockedText: 'UNLOCK',
+
+
 			...config
 		};
 	}
@@ -92,6 +106,17 @@ class CustomToggleButton extends Polymer.Element {
 		const custOffTxt = config.customOffText;
 		const custOnTxt = config.customOnText;
 
+		const unlockedClr = config.unlockedColor
+		const lockedClr = config.lockedColor
+		const unlockedTxtClr = config.unlockedTextColor
+		const lockedTxtClr = config.lockedTextColor
+        const unlockingClr = config.unlockingColor
+		const lockingClr = config.lockingColor
+		const unlockingTxtClr = config.unlockingTextColor
+		const lockingTxtClr = config.lockingTextColor
+        const custUnlockedTxt = config.customUnlockedText
+		const custLockedTxt = config.customLockedText
+
 
 		let state;
         if (stateObj) {
@@ -100,13 +125,33 @@ class CustomToggleButton extends Polymer.Element {
 
 		let color;
 
-		if (state == 'on' || state == 'off' || state == 'locked' || state == 'unlocked') {
+		if (state == 'on' || state == 'off' ||
+		    state == 'locked' || state == 'unlocked' ||
+		    state == 'locking' || state == 'unlocking') {
 			if (custTheme) {
-				if (state == 'on' || state == 'unlocked') {
-					color = 'background-color:' + custOnClr + ';color:' + custOnTxtClr;
-				} else {
-					color = 'background-color:' + custOffClr+ ';color:' + custOffTxtClr;
-				}
+			    switch(state){
+			        case 'on':
+			            color = 'background-color:' + custOnClr + ';color:' + custOnTxtClr;
+			            break;
+			        case 'off':
+			            color = 'background-color:' + custOffClr+ ';color:' + custOffTxtClr;
+			            break;
+			        case 'unlocked':
+			            color = 'background-color:' + unlockedClr+ ';color:' + unlockedTxtClr;
+			            break;
+			        case 'locked':
+			            color = 'background-color:' + lockedClr+ ';color:' + lockedTxtClr;
+			            break;
+			        case 'unlocking':
+			            color = 'background-color:' + unlockingClr+ ';color:' + unlockingTxtClr;
+			            break;
+			        case 'locking':
+			            color = 'background-color:' + lockingClr+ ';color:' + lockingTxtClr;
+			            break;
+			        default:
+			            color = 'background-color: var(--disabled-text-color)';
+
+			    }
 			} else {
 				if (state == 'on' || state == 'unlocked') {
 					color = 'background-color: var(--primary-color)';
@@ -120,8 +165,9 @@ class CustomToggleButton extends Polymer.Element {
 
 		let offtext = custOffTxt;
 		let ontext = custOnTxt;
+		let unlockedtext = custUnlockedTxt;
+		let lockedtext = custLockedTxt;
 		let unavailtext = 'N/A';
-
 		let buttonwidth = buttonWidth;
 		let buttonheight = buttonHeight;
 
@@ -155,7 +201,7 @@ class CustomToggleButton extends Polymer.Element {
 			_height: buttonheight,
 			_buttonName: state,
 			_buttonColor: color,
-			_buttonText: offtext,
+			_buttonText: custLockedTxt,
 			});
 		} else if (state == 'unlocked') {
 			this.setProperties({
@@ -165,7 +211,7 @@ class CustomToggleButton extends Polymer.Element {
 			_height: buttonheight,
 			_buttonName: state,
 			_buttonColor: color,
-			_buttonText: ontext,
+			_buttonText: custUnlockedTxt,
 			});
 		} else {
 			this.setProperties({
@@ -192,9 +238,9 @@ class CustomToggleButton extends Polymer.Element {
 		} else if (state == 'on' ) {
 			this.hass.callService('homeassistant', 'turn_off', {entity_id: this._config.entity});
 		} else if (state == 'locked'){
-		    this.hass.callService('homeassistant', 'unlock', {entity_id: this._config.entity});
+		    this.hass.callService('lock', 'unlock', {entity_id: this._config.entity});
 		} else if (state == 'unlocked'){
-		    this.hass.callService('homeassistant', 'lock', {entity_id: this._config.entity});
+		    this.hass.callService('lock', 'lock', {entity_id: this._config.entity});
 		}
 	}
 }
