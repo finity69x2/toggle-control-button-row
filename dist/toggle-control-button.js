@@ -1,12 +1,12 @@
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: "toggle-control-button-row",
-  name: "toggle control button row",
+  type: "toggle-control-button",
+  name: "Toggle Control Button",
   description: "A plugin to display your binary entity in a button row with a single button.",
   preview: false,
 });
 
-class CustomToggleRow extends Polymer.Element {
+class CustomToggleButton extends Polymer.Element {
 
 	static get template() {
 		return Polymer.html`
@@ -94,21 +94,21 @@ class CustomToggleRow extends Polymer.Element {
 
 
 		let state;
-			if (stateObj) {
-				state = stateObj.state;
-			}
+        if (stateObj) {
+            state = stateObj.state;
+        }
 
 		let color;
 
-		if (state == 'on' || state == 'off') {
+		if (state == 'on' || state == 'off' || state == 'locked' || state == 'unlocked') {
 			if (custTheme) {
-				if (state == 'on') {
+				if (state == 'on' || state == 'unlocked') {
 					color = 'background-color:' + custOnClr + ';color:' + custOnTxtClr;
 				} else {
 					color = 'background-color:' + custOffClr+ ';color:' + custOffTxtClr;
 				}
 			} else {
-				if (state == 'on') {
+				if (state == 'on' || state == 'unlocked') {
 					color = 'background-color: var(--primary-color)';
 				} else {
 					color = 'background-color: var(--disabled-text-color)';
@@ -127,6 +127,8 @@ class CustomToggleRow extends Polymer.Element {
 
 		let offname = 'off';
 		let onname = 'on';
+		let lockedname = 'unlock'
+		let unlockedname = 'lock'
 		let unavailname = 'unavailable';
 
 		if (state == 'off') {
@@ -148,6 +150,26 @@ class CustomToggleRow extends Polymer.Element {
 			_buttonName: offname,
 			_buttonColor: color,
 			_buttonText: ontext,
+			});
+		} else if (state == 'locked') {
+			this.setProperties({
+			_stateObj: stateObj,
+			_buttonState: state,
+			_width: buttonwidth,
+			_height: buttonheight,
+			_buttonName: lockedname,
+			_buttonColor: color,
+			_buttonText: ontext,
+			});
+		} else if (state == 'unlocked') {
+			this.setProperties({
+			_stateObj: stateObj,
+			_buttonState: state,
+			_width: buttonwidth,
+			_height: buttonheight,
+			_buttonName: unlockedname,
+			_buttonColor: color,
+			_buttonText: offtext,
 			});
 		} else {
 			this.setProperties({
@@ -173,8 +195,12 @@ class CustomToggleRow extends Polymer.Element {
 			this.hass.callService('homeassistant', 'turn_on', {entity_id: this._config.entity});
 		} else if (state == 'off' ) {
 			this.hass.callService('homeassistant', 'turn_off', {entity_id: this._config.entity});
+		} else if (state == 'locked'){
+		    this.hass.callService('homeassistant', 'unlock', {entity_id: this._config.entity});
+		} else if (state == 'unlocked'){
+		    this.hass.callService('homeassistant', 'lock', {entity_id: this._config.entity});
 		}
 	}
 }
 
-customElements.define('toggle-control-button-row', CustomToggleRow);
+customElements.define('toggle-control-button', CustomToggleButton);
