@@ -77,10 +77,10 @@ class CustomToggleButton extends Polymer.Element {
             lockedColor: '#f44c09',
             unlockedTextColor: '#FFFFFF',
             lockedTextColor: '#FFFFFF',
-            unlockingColor: '#f44c09'
-            lockingColor: '#f44c09'
-            unlockingTextColor: '#FFFFFF'
-            lockingTextColor: '#FFFFFF'
+            unlockingColor: '#f44c09',
+            lockingColor: '#f44c09',
+            unlockingTextColor: '#FFFFFF',
+            lockingTextColor: '#FFFFFF',
             customUnlockedText: 'LOCK',
             customLockedText: 'UNLOCK',
             customUnlockingText: 'UNLOCKING',
