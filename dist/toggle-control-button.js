@@ -125,17 +125,13 @@ class CustomToggleButton extends Polymer.Element {
 		let buttonwidth = buttonWidth;
 		let buttonheight = buttonHeight;
 
-		let offname = 'off';
-		let onname = 'on';
-		let lockedname = 'unlock'
-		let unlockedname = 'lock'
 		let unavailname = 'unavailable';
 
 		if (state == 'off') {
 			this.setProperties({
 			_stateObj: stateObj,
 			_buttonState: state,
-			_buttonName: onname,
+			_buttonName: state,
 			_width: buttonwidth,
 			_height: buttonheight,
 			_buttonColor: color,
@@ -147,7 +143,7 @@ class CustomToggleButton extends Polymer.Element {
 			_buttonState: state,
 			_width: buttonwidth,
 			_height: buttonheight,
-			_buttonName: offname,
+			_buttonName: state,
 			_buttonColor: color,
 			_buttonText: ontext,
 			});
@@ -157,9 +153,9 @@ class CustomToggleButton extends Polymer.Element {
 			_buttonState: state,
 			_width: buttonwidth,
 			_height: buttonheight,
-			_buttonName: lockedname,
+			_buttonName: state,
 			_buttonColor: color,
-			_buttonText: ontext,
+			_buttonText: offtext,
 			});
 		} else if (state == 'unlocked') {
 			this.setProperties({
@@ -167,9 +163,9 @@ class CustomToggleButton extends Polymer.Element {
 			_buttonState: state,
 			_width: buttonwidth,
 			_height: buttonheight,
-			_buttonName: unlockedname,
+			_buttonName: state,
 			_buttonColor: color,
-			_buttonText: offtext,
+			_buttonText: ontext,
 			});
 		} else {
 			this.setProperties({
@@ -191,9 +187,9 @@ class CustomToggleButton extends Polymer.Element {
 
 	setState(e) {
 		const state = e.currentTarget.getAttribute('name');
-		if( state == 'on' ){
+		if( state == 'off' ){
 			this.hass.callService('homeassistant', 'turn_on', {entity_id: this._config.entity});
-		} else if (state == 'off' ) {
+		} else if (state == 'on' ) {
 			this.hass.callService('homeassistant', 'turn_off', {entity_id: this._config.entity});
 		} else if (state == 'locked'){
 		    this.hass.callService('homeassistant', 'unlock', {entity_id: this._config.entity});
