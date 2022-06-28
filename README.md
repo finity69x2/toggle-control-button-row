@@ -1,6 +1,6 @@
 # lovelace-toggle-control-button
 
-Provides a means to program a Lovelace button row to control any binary entity (lights, switches, locks, input booleans, etc) that have the state as either on or off using a toggle style single button. 
+Provides a means to program a Lovelace button to control any binary entity (lights, switches, locks, input booleans, etc) that have the state as either on or off using a toggle style single button. 
 This will also work for fans and dimmable lights that you would only ever like to switch on & off with a single speed or brightness setting (set outside the configuration for this plugin)
 
 Installation:
@@ -29,7 +29,7 @@ Then to use this in a card place the following in your entity card:
 | Name | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | entity | String | Yes | none | any binary (on/off) entity_id |
-| type | String | Yes | none | custom:binary-control-button-row |
+| type | String | Yes | none | custom:binary-control-button |
 | name | String | No | none | A custom name for the entity in the row |
 | customTheme | Boolean | No | false | set to true to use a custom theme |
 | width | String | No | 30px | A custom width for the button |
