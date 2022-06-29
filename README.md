@@ -103,19 +103,17 @@ Then to use this in a card place the following in your entity card:
             
             
   ```
+Using the default custom theme colors:
 
-This is with the Slate Lovelace frontend theme set using the default colors:
+![CustomDefault](light-default.png)
+
+
+Using the custom theme colors with custom texts:
+
+![Customized](light-custom.png)
+
+Using the custom theme colors with custom texts in lock entity:
 
 ![Lock](lock-control.gif)
-
-
-This is with the Slate Lovelace frontend theme set using the default custom theme colors:
-
-![CustomDefault](toggle_row_custom_default.gif)
-
-
-This is with the Slate Lovelace frontend theme set using the custom theme colors (black & purple) with custom text:
-
-![CustomDefault](toggle_row_custom_text.gif)
 
 
