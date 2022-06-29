@@ -72,33 +72,32 @@ Then to use this in a card place the following in your entity card:
         title: Toggle Buttons
         show_header_toggle: false
         entities:
-        ## USE THIS CONFIG TO HAVE IT MATCH YOUR THEME ##
+          ## DEFAULT CUSTOM THEME
           - type: custom:toggle-control-button
-            name: Basement Bath Default Button Row
-            entity: light.sengled_e11g13_03070a4c_1
-            customTheme: false
-        ## USE THIS CONFIG TO USE A DEFAULT CUSTOM THEME
-          - type: custom:toggle-control-button
-            name: Basement Bath Custom Button Row
             entity: light.basement_bath_light
-            customTheme: true
-        ## USE THIS CONFIG TO USE A 'CUSTOMZED' CUSTOM THEME
+            customTheme: false
+          ## CUSTOMIZED BUTTON COLOR
           - type: custom: toggle-control-button
-            name: Basement Bath Customized Button Row
             entity: light.sengled_e11g13_03070a4c_1
             customTheme: true
             isOnColor: 'rgb(255, 0, 0)'
             isOffColor: 'purple'
-            isOnTextColor: 'white'
-            isOffTextColor: 'black'
-        ## USE THIS CONFIG TO SET CUSTOM BUTTON TEXT (NOT REQUIRED TO SET "customTheme: true" TO USE THESE )
+          ## CUSTOMIZED BOTTON COLOR/TEXT COLOR/TEXT/WIDTH
           - type: custom:toggle-control-button
-            name: Basement Bath Customized Button Row
-            entity: light.sengled_e11g13_03070a4c_1
-            customOnText: yay
-            customOffText: nay
-            width: '15px'
-            height: '15px'
+            entity: switch.vehicle_remote_start
+            isOffColor: 'green'
+            isOnColorL 'red'
+            isOffTextColor: 'white'
+            isOnTextColor: 'white'
+            isOffText: 'START'
+            isOnText: 'STOP'
+            height: '70px'
+          ## DEFAULT CUSTOM THEME OF A LOCK ENTITY
+          - type: custom:toggle-control-button
+            entity: lock.door
+            customTheme: true
+          ## CUSTOMIZED 
+            
   ```
 
 This is with the Slate Lovelace frontend theme set using the default colors:
