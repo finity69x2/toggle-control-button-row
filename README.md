@@ -92,14 +92,22 @@ Then to use this in a card place the following in your entity card:
             isOffText: 'START'
             isOnText: 'STOP'
             height: '70px'
-          ## CUSTOMIZED THEME OF A LOCK ENTITY
+          ## CUSTOMIZED TEXT IN A LOCK ENTITY
           - type: custom:toggle-control-button
             entity: lock.door
             customTheme: true
-          ## CUSTOMIZED LOCK THEME
+            lockedText: 已锁定
+            unlockedText: 已解锁
+          ## CUSTOMIZED COLOR/WIDTH IN A LOCK ENTITY
           - type: custom:toggle-control-button
             entity: lock.door
             customTheme: true
+            name: Lock
+            customTheme: true
+            unlockedColor: RED
+            lockedColor: '#43A047'
+            width: 90px
+            state_color: true
             
             
   ```
