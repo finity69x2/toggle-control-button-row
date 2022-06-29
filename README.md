@@ -72,10 +72,10 @@ Then to use this in a card place the following in your entity card:
         title: Toggle Buttons
         show_header_toggle: false
         entities:
-          ## DEFAULT CUSTOM THEME
+          ## CUSTOMIZED THEME WITH DEFAULT CONFIG
           - type: custom:toggle-control-button
             entity: light.basement_bath_light
-            customTheme: false
+            customTheme: true
           ## CUSTOMIZED BUTTON COLOR
           - type: custom: toggle-control-button
             entity: light.sengled_e11g13_03070a4c_1
@@ -92,11 +92,15 @@ Then to use this in a card place the following in your entity card:
             isOffText: 'START'
             isOnText: 'STOP'
             height: '70px'
-          ## DEFAULT CUSTOM THEME OF A LOCK ENTITY
+          ## CUSTOMIZED THEME OF A LOCK ENTITY
           - type: custom:toggle-control-button
             entity: lock.door
             customTheme: true
-          ## CUSTOMIZED 
+          ## CUSTOMIZED LOCK THEME
+          - type: custom:toggle-control-button
+            entity: lock.door
+            customTheme: true
+            
             
   ```
 
