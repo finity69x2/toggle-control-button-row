@@ -1,10 +1,9 @@
 # Toggle Control Button Row
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
-[![Stable](https://img.shields.io/github/v/release/georgezhao2010/lovelace-toggle-control-button)](https://github.com/georgezhao2010/lovelace-toggle-control-button/releases/latest)
+
 
 [English](https://github.com/georgezhao2010/lovelace-toggle-control-button/blob/main/README.md) | 简体中文
-
 
 
 提供了一个Lovelace按钮去显示和控制二元状态实体(诸如lights, switches, input booleans) ,使用单个按钮去切换这类实体的开关状态, 也可以使用在诸如风扇、调光灯等实体上，用于切换其开关状态。 同时支持锁实体，并且支持锁实体的locked/unlocked/locking/unlocking四种状态。
