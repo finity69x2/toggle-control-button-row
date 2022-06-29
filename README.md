@@ -11,7 +11,7 @@ And it also supports locks that have the states locked/unlocked/locking/unlockin
 
 Installation:
 
-The easiest way to install this is to use the Home Assistant Community Store (HACS) in Home Assistant.
+The easiest way to install this is to use the HACS install it as a custom repository.
 
 Follow the instructions there for installation making sure you note the "url:" section for the resources addition.
 
