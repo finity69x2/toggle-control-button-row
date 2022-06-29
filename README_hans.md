@@ -71,17 +71,17 @@
         title: Toggle Buttons
         show_header_toggle: false
         entities:
-          ## CUSTOMIZED THEME WITH DEFAULT CONFIG
+          ## 自定义的默认配置
           - type: custom:toggle-control-button
             entity: light.basement_bath_light
             customTheme: true
-          ## CUSTOMIZED BUTTON COLOR
+          ## 指定按钮颜色
           - type: custom: toggle-control-button
             entity: light.sengled_e11g13_03070a4c_1
             customTheme: true
             isOnColor: 'rgb(255, 0, 0)'
             isOffColor: 'purple'
-          ## CUSTOMIZED BOTTON COLOR/TEXT COLOR/TEXT/WIDTH
+          ## 指定按钮颜色/文字颜色/文字/按钮宽度
           - type: custom:toggle-control-button
             entity: switch.vehicle_remote_start
             isOffColor: 'green'
@@ -91,13 +91,13 @@
             isOffText: 'START'
             isOnText: 'STOP'
             height: '70px'
-          ## CUSTOMIZED TEXT IN A LOCK ENTITY
+          ## 指定锁实体按钮的文字
           - type: custom:toggle-control-button
             entity: lock.door
             customTheme: true
             lockedText: 已锁定
             unlockedText: 已解锁
-          ## CUSTOMIZED COLOR/WIDTH IN A LOCK ENTITY
+          ## 指定锁实体的颜色/宽度
           - type: custom:toggle-control-button
             entity: lock.door
             customTheme: true
