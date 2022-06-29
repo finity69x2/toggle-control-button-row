@@ -1,5 +1,8 @@
 # Toggle Control Button Row
 
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
+[![Stable](https://img.shields.io/github/v/release/georgezhao2010/lovelace-toggle-control-button)](https://github.com/georgezhao2010/lovelace-toggle-control-button/releases/latest)
+
 Provides a means to program a Lovelace button to control any binary entity (lights, switches, input booleans, etc) that have the state as either on or off using a toggle style single button. 
 This will also work for fans and dimmable lights that you would only ever like to switch on & off with a single speed or brightness setting (set outside the configuration for this plugin).
 And it also supports locks that have the states locked/unlocked/locking/unlocking.
