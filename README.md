@@ -106,7 +106,7 @@ Then to use this in a card place the following in your entity card:
 
 This is with the Slate Lovelace frontend theme set using the default colors:
 
-![Lock](lock_control.gif)
+![Lock](lock-control.gif)
 
 
 This is with the Slate Lovelace frontend theme set using the default custom theme colors:
