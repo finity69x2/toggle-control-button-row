@@ -119,10 +119,12 @@ class CustomToggleRow extends LitElement {
 					color = 'background-color:' + custOffClr;
 				}
 			} else {
+				const styleOn = 'background-color: var(--ha-switch-checked-background-color, var(--ha-color-fill-primary-normal-resting)); border-color: var(--ha-switch-checked-border-color, var(--ha-color-border-primary-loud))';
+				const styleOff = 'background-color: var(--ha-switch-background-color, var(--ha-color-fill-disabled-quiet-resting)); border-color: var(--ha-switch-border-color, var(--ha-color-border-neutral-normal))';
 				if (state == 'on') {
-					color = 'background-color: var(--primary-color)';
+					color = styleOn
 				} else {
-					color = 'background-color: var(--disabled-text-color)';
+					color = styleOff
 				}
 			}
 		} else {
